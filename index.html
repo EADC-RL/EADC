@@ -45,14 +45,23 @@ header.eadc-banner .brand,header.eadc-banner .header-art{display:none}
 .rivalry-table th,.rivalry-table td{padding:9px 6px;border-bottom:1px solid #344047;text-align:right}.rivalry-table th:first-child,.rivalry-table td:first-child{text-align:left}
 .rivalry-wrap{overflow-x:auto;max-width:100%}.record-value{font-size:24px;color:#8dff00;font-weight:900}
 @media(max-width:650px){.extra-card{padding:13px}.rivalry-table{font-size:12px}}
+</style><style id="eadc-roasts-style">
+/* Crop the old baked-in CASUAL 3V3 subtitle from the banner artwork. */
+header.eadc-banner{aspect-ratio:1536/147;background-size:100% auto;background-position:center top}
+header.eadc-banner::after{content:"ROCKET LEAGUE HQ";display:block;position:absolute;left:15%;bottom:5px;z-index:2;color:#eef4f8;font:italic 800 clamp(9px,1.2vw,15px) Arial,sans-serif;letter-spacing:3px;text-shadow:0 2px 4px #000}
+.eadc-roast{margin:12px 0 20px;padding:17px 20px;background:linear-gradient(100deg,#102600,#111119 60%,#21112a);border:1px solid #83ff00;box-shadow:0 0 12px #65d90033;display:flex;align-items:center;gap:14px;min-width:0}
+.eadc-roast-label{flex:none;color:#83ff00;font-size:13px;font-weight:1000;font-style:italic;letter-spacing:1px}
+.eadc-roast-line{flex:1;min-width:0;font-weight:850;font-style:italic;font-size:clamp(13px,2vw,19px);overflow-wrap:anywhere}
+.eadc-roast-next{flex:none;background:#152900;border:1px solid #83ff00;color:#a7ff55;padding:8px 12px;cursor:pointer;font-size:19px;border-radius:5px}
+@media(max-width:650px){header.eadc-banner{height:140px;aspect-ratio:auto;background-size:auto 182px;background-position:61% top}header.eadc-banner::after{display:none}.eadc-roast{padding:12px;gap:8px}.eadc-roast-label{font-size:11px}.eadc-roast-next{padding:6px 8px}}
+@media(prefers-reduced-motion:reduce){.eadc-roast{transition:none}}
 </style></head><body><main>
-<header class="eadc-banner"><div class="brand"><h1>EADC</h1><p>ROCKET LEAGUE HQ • CASUAL 3V3</p></div><div aria-hidden="true" class="header-art">🏎️</div></header>
-<nav><button class="active" data-tab="leaderboard">🏆 Leaderboard</button><button data-tab="awards">💀 Hall of Shame</button><button data-tab="import">⇧ Import Stats</button><button data-tab="about">⚙ Setup</button><button data-tab="advanced">📊 Advanced Stats</button><button data-tab="history">📅 Match History</button><button data-tab="rivalries">⚔ Rivalries</button><button data-tab="records">🏅 Records</button></nav>
+<header class="eadc-banner"><div class="brand"><h1>EADC</h1><p>ROCKET LEAGUE HQ</p></div><div aria-hidden="true" class="header-art">🏎️</div></header>
+<nav><button class="active" data-tab="leaderboard">🏆 Leaderboard</button><button data-tab="awards">💀 Hall of Shame</button><button data-tab="advanced">📊 Advanced Stats</button><button data-tab="history">📅 Match History</button><button data-tab="rivalries">⚔ Rivalries</button><button data-tab="records">🏅 Records</button></nav><div aria-live="polite" class="eadc-roast" role="status"><span class="eadc-roast-label">💬 EADC SAYS:</span><span class="eadc-roast-line" id="eadc-roast-line">Loading tonight’s questionable wisdom…</span><button aria-label="Show another insult" class="eadc-roast-next" id="eadc-roast-next" type="button">⤨</button></div>
 <div class="overview"><div class="panel intro"><h2>Friday Night <span>Warfare</span></h2><div class="tagline">Three blokes. One ball.<br/>Unlimited excuses.</div><p class="muted" id="mode">Awaiting real replay data.</p></div><div class="panel metric"><div class="symbol">🏁</div><div class="label">Matches imported</div><div class="value" id="games">0</div></div><div class="panel metric purple"><div class="symbol">🏆</div><div class="label">Team wins</div><div class="value" id="wins">0</div></div><div class="panel metric blue"><div class="symbol">▥</div><div class="label">Win rate</div><div class="value" id="rate">—</div></div></div>
 <section class="active" id="leaderboard"><div class="dashboard"><div class="stack"><div class="panel"><h2 class="panel-title green">🏆 Player Leaderboard</h2><div class="table-scroll"><table class="leader-table"><thead><tr><th>#</th><th>Player</th><th>Games</th><th>Wins</th><th>Goals</th><th>Assists</th><th>Saves</th><th>Shots</th><th>Avg score</th></tr></thead><tbody id="players"></tbody></table></div></div><div class="panel"><h2 class="panel-title purple">💀 Hall of Shame</h2><div class="award-grid" id="awards-list"></div></div></div><div class="stack"><div class="panel"><h2 class="panel-title green">🛡 Team Overview</h2><div class="team-body"><div class="donut" id="donut"><div class="donut-content"><strong id="donut-rate">—</strong><small>WIN RATE</small></div></div><div class="team-figures"><div><span>⚔ Matches</span><b id="team-games">0</b></div><div><span>🏆 Wins</span><b id="team-wins">0</b></div><div><span>✕ Losses</span><b id="team-losses">0</b></div></div></div></div><div class="panel"><h2 class="panel-title blue">▥ Win Rate Trend</h2><div class="chart-wrap" id="trend"></div></div></div></div></section>
 <section id="awards"><div class="panel"><h2 class="panel-title purple">💀 Hall of Shame</h2><div class="award-grid" id="awards-full"></div><p class="muted" style="padding:0 20px">Crossbar hits are available only when supported by replay data. Post hits are not counted as crossbar hits.</p></div></section>
-<section id="import"><div class="panel info-panel"><h2>Import real match stats</h2><p>Upload Ballchasing replay-detail JSON files or an array of replay details. Duplicates are ignored. The scheduled GitHub sync also loads stats.json automatically.</p><input accept=".json,application/json" id="files" multiple="" type="file"/><p class="muted" id="import-status"></p><div class="warning">Never paste your Ballchasing API token into this website.</div><p><button id="export">Export saved data</button><button id="clear">Clear local data</button></p></div></section>
-<section id="advanced"><div class="panel info-panel"><h2>📊 Advanced Player Stats</h2><div class="extras-grid" id="advanced-body"></div></div></section><section id="history"><div class="panel info-panel"><h2>📅 Match History</h2><p class="muted">Only matches with all three EADC players on the same team are shown. Most recent first.</p><div id="history-body"></div></div></section><section id="rivalries"><div class="panel info-panel"><h2>⚔ Player Rivalries</h2><p class="muted">Friendly competition, calculated from shared replays.</p><div id="rivalries-body"></div></div></section><section id="records"><div class="panel info-panel"><h2>🏅 All-Time Records</h2><div class="extras-grid" id="records-body"></div></div></section><section id="about"><div class="panel info-panel"><h2>EADC setup</h2><p>EADC loads <code>stats.json</code> from this GitHub Pages site after the scheduled Ballchasing sync. You can also import replay-detail JSON manually in the Import Stats tab.</p><p>Player identity is matched by replay player IDs, not display names. Only matches containing all three configured players on the same team are counted.</p><p>Automatic replay uploading from your PC still needs to be connected to Ballchasing.</p></div></section>
+<section id="advanced"><div class="panel info-panel"><h2>📊 Advanced Player Stats</h2><div class="extras-grid" id="advanced-body"></div></div></section><section id="history"><div class="panel info-panel"><h2>📅 Match History</h2><p class="muted">Only matches with all three EADC players on the same team are shown. Most recent first.</p><div id="history-body"></div></div></section><section id="rivalries"><div class="panel info-panel"><h2>⚔ Player Rivalries</h2><p class="muted">Friendly competition, calculated from shared replays.</p><div id="rivalries-body"></div></div></section><section id="records"><div class="panel info-panel"><h2>🏅 All-Time Records</h2><div class="extras-grid" id="records-body"></div></div></section>
 <footer>EADC • The stats don't lie, but your teammates do.</footer></main>
 <script>
 const roster=[{name:'MAGIC',id:'76561199012381219'},{name:'Brotato',id:'76561198967865571'},{name:'Alleny McAllenface',id:'68dd3104dcde490a81e250bcff91a69c'}];
@@ -65,9 +74,6 @@ function render(){const {stats,games,wins,history}=tally();$('games').textConten
 $('players').innerHTML=stats.sort((a,b)=>b.score-a.score).map((p,i)=>`<tr><td>${i+1}</td><td class="player-name">${p.name}<a target="_blank" rel="noopener" href="https://rocketleague.tracker.network/rocket-league/profile/steam/${encodeURIComponent(p.id)}/overview">Player tracker ↗</a></td><td>${p.games}</td><td>${p.wins}</td><td>${p.goals}</td><td>${p.assists}</td><td>${p.saves}</td><td>${p.shots}</td><td>${p.games?Math.round(p.score/p.games):'—'}</td></tr>`).join('');
 const awards=[['🥅 Crossbar King','crossbar'],['💥 Demo Merchant','demolitions'],['⚽ Golden Boot','goals'],['🛡 Brick Wall','saves']];const html=awards.map(([label,k])=>{const winner=[...stats].sort((a,b)=>b[k]-a[k])[0];return `<div class="award"><div class="award-name">${label}</div><div class="winner">${games&&winner[k]?winner.name:'Not awarded yet'}</div><div class="award-score">${games?winner[k]:0}</div></div>`}).join('');$('awards-list').innerHTML=html;$('awards-full').innerHTML=html;drawTrend(history);renderExtras()}
 function persist(){localStorage.setItem(key,JSON.stringify(replays));render()}
-$('files').onchange=async e=>{let added=0,invalid=0;const seen=new Set(replays.map(r=>r.id||r.rocket_league_id).filter(Boolean));for(const file of e.target.files){try{let data=JSON.parse(await file.text());for(const r of Array.isArray(data)?data:[data]){if(!r||!r.blue?.players||!r.orange?.players){invalid++;continue}const id=r.id||r.rocket_league_id;if(!id||seen.has(id))continue;seen.add(id);replays.push(r);added++}}catch{invalid++}}persist();$('import-status').textContent=`Imported ${added} new replays. ${invalid} invalid entries. Only matches containing all three configured players on the same team are counted.`;e.target.value=''};
-$('clear').onclick=()=>{if(confirm('Remove all locally saved replay data?')){replays=[];persist()}};
-$('export').onclick=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(replays,null,2)],{type:'application/json'}));a.download='eadc-replays.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)};
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('section').forEach(s=>s.classList.toggle('active',s.id===b.dataset.tab))});
 render();fetch('./stats.json?ts='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('No synced data yet');return r.json()}).then(data=>{if(Array.isArray(data)){replays=data;render();$('mode').textContent='Automatically synced Ballchasing replay data';}}).catch(()=>{});
 
@@ -102,4 +108,52 @@ function renderExtras(){
  const record=(name,value,detail)=>`<div class="extra-card"><h3>${name}</h3><div class="record-value">${safe(value)}</div><p class="mini">${safe(detail)}</p></div>`;
  rec.innerHTML=record('🔥 Longest win streak',maxStreak+' games','Consecutive qualifying wins')+record('⚽ Most goals in one match',maxBy('goals').goals,maxBy('goals').name)+record('📊 Highest individual score',maxBy('score').score,maxBy('score').name)+record('🛡 Most saves in one match',maxBy('saves').saves,maxBy('saves').name)+record('💥 Most demos in one match',maxBy('demos').demos,maxBy('demos').name)+(biggest?record('🏆 Biggest victory',biggest.our+'–'+biggest.their,'Goal difference: '+(biggest.our-biggest.their)):'')+record('🎯 Team win rate',fmt(100*matches.filter(m=>m.won).length/matches.length)+'%',matches.length+' shared matches');
 }
-</script></body></html>
+</script><script>(function(){
+const roasts=[
+"Brotato has the awareness of a parked car with the handbrake on.",
+"Alleny reads the play like a dyslexic GPS: recalculating, recalculating, own goal.",
+"MAGIC calls it positioning. His teammates call it abandoning the crime scene.",
+"Brotato's aerials are just expensive ways to miss the ball.",
+"Alleny has two speeds: too late and facing the wrong way.",
+"MAGIC's boost management is sponsored by panic.",
+"Brotato couldn't rotate if you put him in a microwave.",
+"Alleny's first touch is a written apology to the opposition.",
+"MAGIC's game sense is brilliant, provided nobody else is playing.",
+"Brotato challenges everything except his own poor decisions.",
+"Alleny's shadow defence is mostly the shadow.",
+"MAGIC spends more time blaming lag than finding the net.",
+"Brotato has the turning circle of a Bunnings sausage sizzle queue.",
+"Alleny's shots on target are classified as accidental discoveries.",
+"MAGIC doesn't ball chase. He aggressively supervises the ball.",
+"Brotato's boost button has more game time than his brain.",
+"Alleny treats open nets like they're protected heritage sites.",
+"MAGIC's confidence is Grand Champion. His decision-making is still in placements.",
+"Brotato couldn't find the back post with Google Maps and a police escort.",
+"Alleny's rotations are more mysterious than the Bermuda Triangle.",
+"MAGIC's greatest save is the excuse he makes after conceding.",
+"Brotato goes up for everything, including balls already in the car park.",
+"Alleny has the reaction time of a Windows update.",
+"MAGIC calls every miss a tactical fake. The ball disagrees.",
+"Brotato has all the finesse of a shopping trolley with one dodgy wheel.",
+"Alleny is the only bloke who can lose a 50/50 to an empty patch of grass.",
+"MAGIC's favourite rotation is straight back to the boost pad.",
+"Brotato's aerial accuracy could be improved by closing his eyes. Somehow.",
+"Alleny defends like he's waiting for written permission.",
+"Three blokes, six thumbs, and not a single shared brain cell.",
+"EADC: making ordinary opponents look like world champions since Friday.",
+"Our defensive strategy is three blokes saying 'you got it' at once.",
+"If missed open nets were points, we'd be undefeated.",
+"EADC's passing game is mostly accidental collisions.",
+"The opposition doesn't need a fourth player. We've already got three liabilities.",
+"We don't throw games. We donate them to the community.",
+"EADC: proof that playing together for years doesn't guarantee improvement.",
+"The only thing consistent about this team is the excuses.",
+"Our team chemistry is three people blaming the same internet connection.",
+"Friday night: when three grown men gather to make the same mistakes louder."
+];
+const line=document.getElementById('eadc-roast-line');const next=document.getElementById('eadc-roast-next');
+if(!line||!next)return;
+let previous=-1;
+function showRoast(){let i=Math.floor(Math.random()*roasts.length);if(i===previous)i=(i+1)%roasts.length;previous=i;line.textContent=roasts[i];}
+next.addEventListener('click',showRoast);showRoast();setInterval(showRoast,11000);
+})();</script></body></html>
