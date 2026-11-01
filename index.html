@@ -57,14 +57,20 @@ header.eadc-banner::after{content:"ROCKET LEAGUE HQ";display:block;position:abso
 @media(prefers-reduced-motion:reduce){.eadc-roast{transition:none}}
 </style><style id="eadc-shame-style">.eadc-shame-heading{padding:22px 20px 12px;color:#a855f7;font-size:16px;font-weight:900;letter-spacing:1.5px}.award .award-score{overflow-wrap:anywhere}.award .award-name{overflow-wrap:anywhere}.eadc-shame-note{font-size:11px;color:#aab5bc;line-height:1.45;margin-top:7px}.eadc-shame-empty{padding:16px 20px;color:#aab5bc}</style><style id="eadc-friday-style">
 .eadc-friday-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.eadc-friday-card{border:1px solid #40502b;background:linear-gradient(145deg,#0b170c,#13121d);padding:20px;border-radius:12px;min-width:0}.eadc-friday-card.lvp{border-color:#a855f7}.eadc-friday-title{font-size:13px;color:#a1ff31;letter-spacing:2px;font-weight:900}.eadc-friday-card.lvp .eadc-friday-title{color:#c38cff}.eadc-friday-name{font-size:clamp(21px,3vw,33px);font-weight:1000;margin:9px 0;overflow-wrap:anywhere}.eadc-friday-note{color:#b9c2c8;line-height:1.5}.eadc-friday-score{font-size:12px;color:#91a3ad;margin-top:10px}.eadc-roast-sub{margin-top:14px;padding:17px;border:1px solid #4d6e34;border-radius:10px;background:#0b140d}.eadc-roast-sub strong{color:#a1ff31}.eadc-roast-sub p{margin:10px 0 0;line-height:1.6}.eadc-session-note{font-size:12px;color:#9da9b2;margin-bottom:14px}@media(max-width:650px){.eadc-friday-grid{grid-template-columns:1fr}}
-</style></head><body><main>
+</style><style id="eadc-zinger-style">.intro{display:flex;flex-direction:column;justify-content:center;min-height:155px}.intro .eadc-zinger-title{font-size:clamp(22px,3.1vw,41px);line-height:1.12;margin:0 0 16px;letter-spacing:.1px;transition:opacity .3s ease}.intro .eadc-zinger-title span{display:inline;color:var(--green);font-size:1em}.intro .eadc-zinger-title.changing{opacity:.12}.intro #mode{margin-top:0}@media(max-width:650px){.intro{min-height:128px}.intro .eadc-zinger-title{font-size:clamp(24px,6vw,34px)}}@media(prefers-reduced-motion:reduce){.intro .eadc-zinger-title{transition:none}}</style></head><body><main>
 <header class="eadc-banner"><div class="brand"><h1>EADC</h1><p>ROCKET LEAGUE HQ</p></div><div aria-hidden="true" class="header-art">🏎️</div></header>
-<nav><button class="active" data-tab="leaderboard">🏆 Leaderboard</button><button data-tab="awards">💀 Hall of Shame</button><button data-tab="friday">🏅 Friday MVP / LVP</button><button data-tab="advanced">📊 Advanced Stats</button><button data-tab="history">📅 Match History</button><button data-tab="rivalries">⚔ Rivalries</button><button data-tab="records">🏅 Records</button></nav><div aria-live="polite" class="eadc-roast" role="status"><span class="eadc-roast-label">💬 EADC SAYS:</span><span class="eadc-roast-line" id="eadc-roast-line">Loading tonight’s questionable wisdom…</span><button aria-label="Show another insult" class="eadc-roast-next" id="eadc-roast-next" type="button">⤨</button></div>
-<div class="overview"><div class="panel intro"><h2>Friday Night <span>Warfare</span></h2><div class="tagline">Three blokes. One ball.<br/>Unlimited excuses.</div><p class="muted" id="mode">Awaiting real replay data.</p></div><div class="panel metric"><div class="symbol">🏁</div><div class="label">Matches imported</div><div class="value" id="games">0</div></div><div class="panel metric purple"><div class="symbol">🏆</div><div class="label">Team wins</div><div class="value" id="wins">0</div></div><div class="panel metric blue"><div class="symbol">▥</div><div class="label">Win rate</div><div class="value" id="rate">—</div></div></div>
+<nav><button class="active" data-tab="leaderboard">🏆 Leaderboard</button><button data-tab="awards">💀 Hall of Shame</button><button data-tab="friday">🏅 Friday MVP / LVP</button><button data-tab="advanced">📊 Advanced Stats</button><button data-tab="history">📅 Match History</button><button data-tab="rivalries">⚔ Rivalries</button><button data-tab="records">🏅 Records</button><button data-tab="form">📈 Form Tracker</button></nav><div aria-live="polite" class="eadc-roast" role="status"><span class="eadc-roast-label">💬 EADC SAYS:</span><span class="eadc-roast-line" id="eadc-roast-line">Loading tonight’s questionable wisdom…</span><button aria-label="Show another insult" class="eadc-roast-next" id="eadc-roast-next" type="button">⤨</button></div>
+<div class="overview"><div class="panel intro"><h2 class="eadc-zinger-title" id="eadc-zinger" aria-live="off">Three blokes. <span>One ball.</span> Unlimited excuses.</h2><p class="muted" id="mode">Awaiting real replay data.</p></div><div class="panel metric"><div class="symbol">🏁</div><div class="label">Matches imported</div><div class="value" id="games">0</div></div><div class="panel metric purple"><div class="symbol">🏆</div><div class="label">Team wins</div><div class="value" id="wins">0</div></div><div class="panel metric blue"><div class="symbol">▥</div><div class="label">Win rate</div><div class="value" id="rate">—</div></div></div>
 <section class="active" id="leaderboard"><div class="dashboard"><div class="stack"><div class="panel"><h2 class="panel-title green">🏆 Player Leaderboard</h2><div class="table-scroll"><table class="leader-table"><thead><tr><th>#</th><th>Player</th><th>Games</th><th>Wins</th><th>Goals</th><th>Assists</th><th>Saves</th><th>Shots</th><th>Avg score</th></tr></thead><tbody id="players"></tbody></table></div></div><div class="panel"><h2 class="panel-title purple">💀 Hall of Shame</h2><div class="award-grid" id="awards-list"></div></div></div><div class="stack"><div class="panel"><h2 class="panel-title green">🛡 Team Overview</h2><div class="team-body"><div class="donut" id="donut"><div class="donut-content"><strong id="donut-rate">—</strong><small>WIN RATE</small></div></div><div class="team-figures"><div><span>⚔ Matches</span><b id="team-games">0</b></div><div><span>🏆 Wins</span><b id="team-wins">0</b></div><div><span>✕ Losses</span><b id="team-losses">0</b></div></div></div></div><div class="panel"><h2 class="panel-title blue">▥ Win Rate Trend</h2><div class="chart-wrap" id="trend"></div></div></div></div></section>
 <section id="awards"><div class="panel"><h2 class="panel-title purple">💀 Hall of Shame</h2><p class="muted" style="padding:0 20px">Twelve data-based awards. Some titles are jokes based on measurable proxies, not direct observations of play.</p><div class="eadc-shame-heading">💀 ALL-TIME DISASTERS</div><div class="award-grid" id="awards-full"></div><div class="eadc-shame-heading">📅 LATEST FRIDAY DISASTERS</div><p class="muted" id="shame-friday-date" style="padding:0 20px"></p><div class="award-grid" id="awards-friday"></div></div></section>
 <section id="friday"><div class="panel info-panel"><h2>🏅 Friday Night MVP & LVP</h2><p class="eadc-session-note" id="eadc-friday-date">Calculated from qualifying shared replays.</p><div class="eadc-friday-grid" id="eadc-friday-awards"></div><div class="eadc-roast-sub"><strong>💬 STAT-BASED ROAST ENGINE</strong><p id="eadc-stat-roast">Waiting for match statistics…</p><button class="eadc-roast-next" id="eadc-stat-next" type="button" style="margin-top:12px;font-size:14px">Another roast ⤨</button></div></div></section><section id="advanced"><div class="panel info-panel"><h2>📊 Advanced Player Stats</h2><div class="extras-grid" id="advanced-body"></div></div></section><section id="history"><div class="panel info-panel"><h2>📅 Match History</h2><p class="muted">Only matches with all three EADC players on the same team are shown. Most recent first.</p><div id="history-body"></div></div></section><section id="rivalries"><div class="panel info-panel"><h2>⚔ Player Rivalries</h2><p class="muted">Friendly competition, calculated from shared replays.</p><div id="rivalries-body"></div></div></section><section id="records"><div class="panel info-panel"><h2>🏅 All-Time Records</h2><div class="extras-grid" id="records-body"></div></div></section>
 <footer>EADC • The stats don't lie, but your teammates do.</footer></main>
+<section id="form"><div class="panel"><h2 class="panel-title green">📈 Player Form Tracker</h2><div class="form-intro">Last 5 matches compared with the previous 5. Trends update automatically from your synced Ballchasing replays.</div><div id="form-body" class="form-grid"></div></div></section>
+<style>/* EADC eight-tab navigation and form tracker */
+nav{grid-template-columns:repeat(4,minmax(0,1fr))!important}nav button{min-width:0;overflow-wrap:anywhere}
+@media(max-width:650px){nav{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px;padding:5px}nav button{font-size:10px;padding:11px 2px;letter-spacing:0;line-height:1.25;min-height:51px}}
+.form-intro{padding:16px 18px;color:#bdc8d0;font-size:13px}.form-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding:14px}.form-player{min-width:0;background:linear-gradient(150deg,#1d2622,#0b1012);border:1px solid #52606c;padding:17px}.form-player h3{margin:0 0 8px;color:#83ff00;font-size:20px;overflow-wrap:anywhere}.form-status{font-size:12px;color:#c9d5dd;margin-bottom:15px}.form-stat{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-top:1px solid #344047;font-size:12px}.form-stat strong{font-size:15px;text-align:right}.form-up{color:#83ff00}.form-down{color:#ff849b}.form-even{color:#b8c5cd}.form-graph{width:100%;height:96px;display:block;margin:12px 0 5px}.form-legend{color:#b5c1ca;font-size:11px}.form-empty{padding:20px;color:#b5c1ca}@media(max-width:900px){.form-grid{grid-template-columns:1fr}}@media(min-width:651px) and (max-width:850px){nav button{font-size:12px;padding:11px 3px}}
+</style>
 <script>
 const roster=[{name:'MAGIC',id:'76561199012381219'},{name:'Brotato',id:'76561198967865571'},{name:'Alleny McAllenface',id:'68dd3104dcde490a81e250bcff91a69c'}];
 const key='eadc-replays-v1';let replays=[];try{replays=JSON.parse(localStorage.getItem(key)||'[]')}catch{};
@@ -170,8 +176,32 @@ function eadcNextStatRoast(){if(!eadcStatRoasts.length)return;let i=Math.floor(M
 $('eadc-stat-next').addEventListener('click',eadcNextStatRoast);
 setInterval(eadcNextStatRoast,11000);
 
+
+function renderFormTracker(){
+ const target=$('form-body');if(!target)return;
+ const matches=[...sharedMatchDetails()].reverse();
+ if(!matches.length){target.innerHTML='<div class="form-empty">No shared matches yet. Form will appear after replays sync.</div>';return}
+ const escapeHTML=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const avg=(arr,k)=>arr.length?arr.reduce((sum,p)=>sum+(+p[k]||0),0)/arr.length:0;
+ const fmt=x=>Number(x).toFixed(1);
+ const trend=(now,old,unit='')=>{if(old===null)return `<span class="form-even">${fmt(now)}${unit} · collecting history</span>`;const diff=now-old;return `<span class="${diff>0.05?'form-up':diff< -0.05?'form-down':'form-even'}">${fmt(now)}${unit} ${diff>0.05?'▲':diff< -0.05?'▼':'●'} ${diff>0?'+':''}${fmt(diff)}${unit}</span>`};
+ target.innerHTML=roster.map((r,i)=>{
+  const all=matches.map(m=>m.players[i]).filter(Boolean),recent=all.slice(-5),previous=all.slice(-10,-5);
+  const metric=(arr,k)=>k==='accuracy'?(arr.reduce((t,p)=>t+p.shots,0)?100*arr.reduce((t,p)=>t+p.goals,0)/arr.reduce((t,p)=>t+p.shots,0):0):avg(arr,k);
+  const scores=all.map(p=>p.score),last=scores.slice(-15),max=Math.max(1,...last),min=Math.min(0,...last),range=Math.max(1,max-min);
+  const points=last.map((v,j)=>`${10+(last.length===1?50:j*280/(last.length-1))},${82-(v-min)/range*65}`).join(' ');
+  const chart=last.length>1?`<svg class="form-graph" viewBox="0 0 300 96" role="img" aria-label="Average score trend over last ${last.length} matches"><line x1="10" y1="82" x2="290" y2="82" stroke="#52606c"/><polyline points="${points}" fill="none" stroke="#83ff00" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></svg>`:'<div class="form-empty">Graph appears after 2 matches.</div>';
+  const old=previous.length>=1?previous:null;
+  const metrics=[['Average score','score',''],['Goals per game','goals',''],['Saves per game','saves',''],['Shooting accuracy','accuracy','%']];
+  const scoreChange=old?metric(recent,'score')-metric(old,'score'):null;
+  const label=scoreChange===null?'More matches needed for comparison':scoreChange>5?'📈 Improving':scoreChange< -5?'📉 Slipping':'➖ Holding steady';
+  return `<article class="form-player"><h3>${escapeHTML(r.name)}</h3><div class="form-status">${label} · ${recent.length} recent matches${old?' vs '+old.length+' earlier':''}</div>${chart}<div class="form-legend">Match-by-match score · last ${last.length} games</div>${metrics.map(([label,k,unit])=>`<div class="form-stat"><span>${label}</span><strong>${trend(metric(recent,k),old?metric(old,k):null,unit)}</strong></div>`).join('')}</article>`;
+ }).join('');
+}
+
 function renderExtras(){
  eadcFriday();
+ renderFormTracker();
  const matches=sharedMatchDetails(),{stats}=tally();
  const safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const fmt=x=>Number.isFinite(x)?x.toFixed(2):'—';
@@ -241,4 +271,25 @@ if(!line||!next)return;
 let previous=-1;
 function showRoast(){let i=Math.floor(Math.random()*roasts.length);if(i===previous)i=(i+1)%roasts.length;previous=i;line.textContent=roasts[i];}
 next.addEventListener('click',showRoast);showRoast();setInterval(showRoast,11000);
-})();</script></body></html>
+})();</script><script id="eadc-zinger-script">(()=>{const el=document.getElementById('eadc-zinger');if(!el)return;const lines=[
+['Three blokes.','One ball.','Unlimited excuses.'],
+['Three mates.','Zero rotations.','Infinite confidence.'],
+['The only thing we pass','is the blame.',''],
+['Seven years of practice.','Still waiting','for improvement.'],
+['Three controllers.','One shared','brain cell.'],
+['Champions of','almost','saving it.'],
+['All boost.','No brains.','No problem.'],
+['We came.','We saw.','We whiffed.'],
+['Making bronze decisions','at supersonic','speed.'],
+['Three blokes.','Four excuses.','Every kickoff.'],
+['The ball is round.','Our rotations','are not.'],
+['Our greatest rival','is basic','communication.'],
+['If excuses were goals,','we would be','undefeated.'],
+['The scoreboard remembers.','Unfortunately,','so do we.'],
+['Built different.','Unfortunately,','built wrong.'],
+['Less teamwork.','More','finger-pointing.'],
+['One team.','Three main','characters.'],
+['Our best move?','Blaming','the servers.'],
+['Defence is optional.','Regret is','guaranteed.'],
+['Friday night legends.','Saturday morning','denials.']
+];let previous=0;function rotate(){let i=Math.floor(Math.random()*lines.length);if(i===previous)i=(i+1)%lines.length;previous=i;const a=lines[i];el.classList.add('changing');setTimeout(()=>{el.replaceChildren(document.createTextNode(a[0]+' '),(()=>{const span=document.createElement('span');span.textContent=a[1];return span})(),document.createTextNode(a[2]?' '+a[2]:''));el.classList.remove('changing')},300)}setInterval(rotate,8000)})();</script></body></html>
