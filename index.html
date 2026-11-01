@@ -77,7 +77,6 @@ $('players').innerHTML=stats.sort((a,b)=>b.score-a.score).map((p,i)=>`<tr><td>${
 const awards=[['🥅 Crossbar King','crossbar'],['💥 Demo Merchant','demolitions'],['⚽ Golden Boot','goals'],['🛡 Brick Wall','saves']];const html=awards.map(([label,k])=>{const winner=[...stats].sort((a,b)=>b[k]-a[k])[0];return `<div class="award"><div class="award-name">${label}</div><div class="winner">${games&&winner[k]?winner.name:'Not awarded yet'}</div><div class="award-score">${games?winner[k]:0}</div></div>`}).join('');$('awards-list').innerHTML=html;$('awards-full').innerHTML=html;drawTrend(history);renderExtras()}
 function persist(){localStorage.setItem(key,JSON.stringify(replays));render()}
 document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('section').forEach(s=>s.classList.toggle('active',s.id===b.dataset.tab))});
-render();fetch('./stats.json?ts='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('No synced data yet');return r.json()}).then(data=>{if(Array.isArray(data)){replays=data;render();$('mode').textContent='Automatically synced Ballchasing replay data';}}).catch(()=>{});
 
 function sharedMatchDetails(){
  const output=[];
@@ -147,6 +146,9 @@ function renderExtras(){
  const record=(name,value,detail)=>`<div class="extra-card"><h3>${name}</h3><div class="record-value">${safe(value)}</div><p class="mini">${safe(detail)}</p></div>`;
  rec.innerHTML=record('🔥 Longest win streak',maxStreak+' games','Consecutive qualifying wins')+record('⚽ Most goals in one match',maxBy('goals').goals,maxBy('goals').name)+record('📊 Highest individual score',maxBy('score').score,maxBy('score').name)+record('🛡 Most saves in one match',maxBy('saves').saves,maxBy('saves').name)+record('💥 Most demos in one match',maxBy('demos').demos,maxBy('demos').name)+(biggest?record('🏆 Biggest victory',biggest.our+'–'+biggest.their,'Goal difference: '+(biggest.our-biggest.their)):'')+record('🎯 Team win rate',fmt(100*matches.filter(m=>m.won).length/matches.length)+'%',matches.length+' shared matches');
 }
+
+// Start only after all Friday-award state and functions are initialized.
+render();fetch('./stats.json?ts='+Date.now(),{cache:'no-store'}).then(r=>{if(!r.ok)throw Error('No synced data yet');return r.json()}).then(data=>{if(Array.isArray(data)){replays=data;render();$('mode').textContent='Automatically synced Ballchasing replay data';}}).catch(()=>{});
 </script><script>(function(){
 const roasts=[
 "Brotato has the awareness of a parked car with the handbrake on.",
