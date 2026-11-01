@@ -25,7 +25,7 @@ jobs:
       - name: Import Ballchasing stats
         env:
           BALLCHASING_TOKEN: ${{ secrets.BALLCHASING_TOKEN }}
-        run: python scripts/sync_stats.py
+        run: run: python sync.py
 
       - name: Commit updated stats
         run: |
