@@ -57,15 +57,31 @@ header.eadc-banner::after{content:"ROCKET LEAGUE HQ";display:block;position:abso
 @media(prefers-reduced-motion:reduce){.eadc-roast{transition:none}}
 </style><style id="eadc-shame-style">.eadc-shame-heading{padding:22px 20px 12px;color:#a855f7;font-size:16px;font-weight:900;letter-spacing:1.5px}.award .award-score{overflow-wrap:anywhere}.award .award-name{overflow-wrap:anywhere}.eadc-shame-note{font-size:11px;color:#aab5bc;line-height:1.45;margin-top:7px}.eadc-shame-empty{padding:16px 20px;color:#aab5bc}</style><style id="eadc-friday-style">
 .eadc-friday-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.eadc-friday-card{border:1px solid #40502b;background:linear-gradient(145deg,#0b170c,#13121d);padding:20px;border-radius:12px;min-width:0}.eadc-friday-card.lvp{border-color:#a855f7}.eadc-friday-title{font-size:13px;color:#a1ff31;letter-spacing:2px;font-weight:900}.eadc-friday-card.lvp .eadc-friday-title{color:#c38cff}.eadc-friday-name{font-size:clamp(21px,3vw,33px);font-weight:1000;margin:9px 0;overflow-wrap:anywhere}.eadc-friday-note{color:#b9c2c8;line-height:1.5}.eadc-friday-score{font-size:12px;color:#91a3ad;margin-top:10px}.eadc-roast-sub{margin-top:14px;padding:17px;border:1px solid #4d6e34;border-radius:10px;background:#0b140d}.eadc-roast-sub strong{color:#a1ff31}.eadc-roast-sub p{margin:10px 0 0;line-height:1.6}.eadc-session-note{font-size:12px;color:#9da9b2;margin-bottom:14px}@media(max-width:650px){.eadc-friday-grid{grid-template-columns:1fr}}
-</style><style id="eadc-zinger-style">.intro{display:flex;flex-direction:column;justify-content:center;min-height:155px}.intro .eadc-zinger-title{font-size:clamp(22px,3.1vw,41px);line-height:1.12;margin:0 0 16px;letter-spacing:.1px;transition:opacity .3s ease}.intro .eadc-zinger-title span{display:inline;color:var(--green);font-size:1em}.intro .eadc-zinger-title.changing{opacity:.12}.intro #mode{margin-top:0}@media(max-width:650px){.intro{min-height:128px}.intro .eadc-zinger-title{font-size:clamp(24px,6vw,34px)}}@media(prefers-reduced-motion:reduce){.intro .eadc-zinger-title{transition:none}}</style></head><body><main>
+</style><style id="eadc-zinger-style">.intro{display:flex;flex-direction:column;justify-content:center;min-height:155px}.intro .eadc-zinger-title{font-size:clamp(22px,3.1vw,41px);line-height:1.12;margin:0 0 16px;letter-spacing:.1px;transition:opacity .3s ease}.intro .eadc-zinger-title span{display:inline;color:var(--green);font-size:1em}.intro .eadc-zinger-title.changing{opacity:.12}.intro #mode{margin-top:0}@media(max-width:650px){.intro{min-height:128px}.intro .eadc-zinger-title{font-size:clamp(24px,6vw,34px)}}@media(prefers-reduced-motion:reduce){.intro .eadc-zinger-title{transition:none}}</style><style>
+.eadc-feature{margin-top:25px;padding-top:18px;border-top:1px solid rgba(112,255,0,.22)}
+.eadc-feature h2{color:#b4ff5c;margin:0 0 6px;font-size:clamp(19px,3vw,25px)}
+.eadc-feature .muted{margin:0 0 15px}
+.eadc-feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px}
+.eadc-feature-card{background:linear-gradient(145deg,#18211c,#0b1012);border:1px solid #40523d;border-radius:13px;padding:16px;min-width:0;overflow-wrap:anywhere}
+.eadc-feature-card.shame{border-color:#7d3ba3}.eadc-feature-card.gold{border-color:#86c72c}
+.eadc-feature-card h3{margin:0 0 8px;font-size:17px;color:#c4ff74}
+.eadc-feature-card .big{font-size:23px;font-weight:900;color:#fff;margin:4px 0}
+.eadc-feature-card p{margin:6px 0;color:#c9d2d0;font-size:13px;line-height:1.5}
+.eadc-feature-card .eyebrow{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#a6b2a8}
+.eadc-feature-card .verdict{font-style:italic;color:#e0baff}
+.eadc-recap-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:10px;margin:12px 0}
+.eadc-recap-stats>div{border:1px solid #385532;background:#101a12;border-radius:10px;padding:12px;text-align:center}
+.eadc-recap-stats strong{display:block;color:#b4ff5c;font-size:23px}
+.eadc-recap-stats span{font-size:11px;color:#c9d2d0}
+</style></head><body><main>
 <header class="eadc-banner"><div class="brand"><h1>EADC</h1><p>ROCKET LEAGUE HQ</p></div><div aria-hidden="true" class="header-art">🏎️</div></header>
 <nav><button class="active" data-tab="leaderboard">🏆 Leaderboard</button><button data-tab="awards">💀 Hall of Shame</button><button data-tab="friday">🏅 Friday MVP / LVP</button><button data-tab="advanced">📊 Advanced Stats</button><button data-tab="history">📅 Match History</button><button data-tab="rivalries">⚔ Rivalries</button><button data-tab="records">🏅 Records</button><button data-tab="form">📈 Form Tracker</button></nav><div aria-live="polite" class="eadc-roast" role="status"><span class="eadc-roast-label">💬 EADC SAYS:</span><span class="eadc-roast-line" id="eadc-roast-line">Loading tonight’s questionable wisdom…</span><button aria-label="Show another insult" class="eadc-roast-next" id="eadc-roast-next" type="button">⤨</button></div>
-<div class="overview"><div class="panel intro"><h2 class="eadc-zinger-title" id="eadc-zinger" aria-live="off">Three blokes. <span>One ball.</span> Unlimited excuses.</h2><p class="muted" id="mode">Awaiting real replay data.</p></div><div class="panel metric"><div class="symbol">🏁</div><div class="label">Matches imported</div><div class="value" id="games">0</div></div><div class="panel metric purple"><div class="symbol">🏆</div><div class="label">Team wins</div><div class="value" id="wins">0</div></div><div class="panel metric blue"><div class="symbol">▥</div><div class="label">Win rate</div><div class="value" id="rate">—</div></div></div>
+<div class="overview"><div class="panel intro"><h2 aria-live="off" class="eadc-zinger-title" id="eadc-zinger">Three blokes. <span>One ball.</span> Unlimited excuses.</h2><p class="muted" id="mode">Awaiting real replay data.</p></div><div class="panel metric"><div class="symbol">🏁</div><div class="label">Matches imported</div><div class="value" id="games">0</div></div><div class="panel metric purple"><div class="symbol">🏆</div><div class="label">Team wins</div><div class="value" id="wins">0</div></div><div class="panel metric blue"><div class="symbol">▥</div><div class="label">Win rate</div><div class="value" id="rate">—</div></div></div>
 <section class="active" id="leaderboard"><div class="dashboard"><div class="stack"><div class="panel"><h2 class="panel-title green">🏆 Player Leaderboard</h2><div class="table-scroll"><table class="leader-table"><thead><tr><th>#</th><th>Player</th><th>Games</th><th>Wins</th><th>Goals</th><th>Assists</th><th>Saves</th><th>Shots</th><th>Avg score</th></tr></thead><tbody id="players"></tbody></table></div></div><div class="panel"><h2 class="panel-title purple">💀 Hall of Shame</h2><div class="award-grid" id="awards-list"></div></div></div><div class="stack"><div class="panel"><h2 class="panel-title green">🛡 Team Overview</h2><div class="team-body"><div class="donut" id="donut"><div class="donut-content"><strong id="donut-rate">—</strong><small>WIN RATE</small></div></div><div class="team-figures"><div><span>⚔ Matches</span><b id="team-games">0</b></div><div><span>🏆 Wins</span><b id="team-wins">0</b></div><div><span>✕ Losses</span><b id="team-losses">0</b></div></div></div></div><div class="panel"><h2 class="panel-title blue">▥ Win Rate Trend</h2><div class="chart-wrap" id="trend"></div></div></div></div></section>
 <section id="awards"><div class="panel"><h2 class="panel-title purple">💀 Hall of Shame</h2><p class="muted" style="padding:0 20px">Twelve data-based awards. Some titles are jokes based on measurable proxies, not direct observations of play.</p><div class="eadc-shame-heading">💀 ALL-TIME DISASTERS</div><div class="award-grid" id="awards-full"></div><div class="eadc-shame-heading">📅 LATEST FRIDAY DISASTERS</div><p class="muted" id="shame-friday-date" style="padding:0 20px"></p><div class="award-grid" id="awards-friday"></div></div></section>
-<section id="friday"><div class="panel info-panel"><h2>🏅 Friday Night MVP & LVP</h2><p class="eadc-session-note" id="eadc-friday-date">Calculated from qualifying shared replays.</p><div class="eadc-friday-grid" id="eadc-friday-awards"></div><div class="eadc-roast-sub"><strong>💬 STAT-BASED ROAST ENGINE</strong><p id="eadc-stat-roast">Waiting for match statistics…</p><button class="eadc-roast-next" id="eadc-stat-next" type="button" style="margin-top:12px;font-size:14px">Another roast ⤨</button></div></div></section><section id="advanced"><div class="panel info-panel"><h2>📊 Advanced Player Stats</h2><div class="extras-grid" id="advanced-body"></div></div></section><section id="history"><div class="panel info-panel"><h2>📅 Match History</h2><p class="muted">Only matches with all three EADC players on the same team are shown. Most recent first.</p><div id="history-body"></div></div></section><section id="rivalries"><div class="panel info-panel"><h2>⚔ Player Rivalries</h2><p class="muted">Friendly competition, calculated from shared replays.</p><div id="rivalries-body"></div></div></section><section id="records"><div class="panel info-panel"><h2>🏅 All-Time Records</h2><div class="extras-grid" id="records-body"></div></div></section>
+<section id="friday"><div class="panel info-panel"><h2>🏅 Friday Night MVP &amp; LVP</h2><p class="eadc-session-note" id="eadc-friday-date">Calculated from qualifying shared replays.</p><div class="eadc-friday-grid" id="eadc-friday-awards"></div><div class="eadc-roast-sub"><strong>💬 STAT-BASED ROAST ENGINE</strong><p id="eadc-stat-roast">Waiting for match statistics…</p><button class="eadc-roast-next" id="eadc-stat-next" style="margin-top:12px;font-size:14px" type="button">Another roast ⤨</button></div></div><div class="eadc-feature" id="eadc-recap"><h2>🏁 Friday Night Recap</h2><p class="muted">Latest recorded Friday session, or the latest available date if no Friday games exist.</p><div id="eadc-recap-body"></div></div></section><section id="advanced"><div class="panel info-panel"><h2>📊 Advanced Player Stats</h2><div class="extras-grid" id="advanced-body"></div></div></section><section id="history"><div class="panel info-panel"><h2>📅 Match History</h2><p class="muted">Only matches with all three EADC players on the same team are shown. Most recent first.</p><div id="history-body"></div></div><div class="eadc-feature" id="eadc-reports"><h2>📋 Post-Match Report Cards</h2><p class="muted">Every match gets a verdict based on its real scoreboard.</p><div id="eadc-reports-body"></div></div></section><section id="rivalries"><div class="panel info-panel"><h2>⚔ Player Rivalries</h2><p class="muted">Friendly competition, calculated from shared replays.</p><div id="rivalries-body"></div></div></section><section id="records"><div class="panel info-panel"><h2>🏅 All-Time Records</h2><div class="extras-grid" id="records-body"></div></div><div class="eadc-feature" id="eadc-achievements"><h2>🏅 Achievement Cabinet</h2><p class="muted">Unlocked from actual shared replays. Some awards celebrate greatness; others document crimes against Rocket League.</p><div id="eadc-achievements-body"></div></div></section>
 <footer>EADC • The stats don't lie, but your teammates do.</footer></main>
-<section id="form"><div class="panel"><h2 class="panel-title green">📈 Player Form Tracker</h2><div class="form-intro">Last 5 matches compared with the previous 5. Trends update automatically from your synced Ballchasing replays.</div><div id="form-body" class="form-grid"></div></div></section>
+<section id="form"><div class="panel"><h2 class="panel-title green">📈 Player Form Tracker</h2><div class="form-intro">Last 5 matches compared with the previous 5. Trends update automatically from your synced Ballchasing replays.</div><div class="form-grid" id="form-body"></div></div></section>
 <style>/* EADC eight-tab navigation and form tracker */
 nav{grid-template-columns:repeat(4,minmax(0,1fr))!important}nav button{min-width:0;overflow-wrap:anywhere}
 @media(max-width:650px){nav{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px;padding:5px}nav button{font-size:10px;padding:11px 2px;letter-spacing:0;line-height:1.25;min-height:51px}}
@@ -199,9 +215,60 @@ function renderFormTracker(){
  }).join('');
 }
 
+
+// EADC extras: read-only presentation of qualifying Ballchasing replay data.
+function renderNewFeatures(){
+ const matches=sharedMatchDetails();
+ const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+ const grid=cards=>'<div class="eadc-feature-grid">'+cards.join('')+'</div>';
+ const card=(title,big,detail,cls='')=>`<article class="eadc-feature-card ${cls}"><h3>${esc(title)}</h3><div class="big">${esc(big)}</div><p>${detail}</p></article>`;
+ const ach=$('eadc-achievements-body'),rep=$('eadc-reports-body'),rec=$('eadc-recap-body');
+ if(!matches.length){for(const el of [ach,rep,rec])el.innerHTML='<p class="muted">No qualifying shared replay data yet. Awards and reports unlock when the three EADC players appear together.</p>';return}
+ const playerGames=roster.map(r=>({name:r.name,games:matches.map(m=>({m,p:m.players.find(p=>p.name===r.name)})).filter(x=>x.p)}));
+ const awards=[];
+ for(const {name,games} of playerGames){
+  const stats=games.map(x=>x.p);
+  const bestGoals=Math.max(...stats.map(p=>p.goals));
+  const bestSaves=Math.max(...stats.map(p=>p.saves));
+  const bestDemos=Math.max(...stats.map(p=>p.demos));
+  const totalShots=stats.reduce((a,p)=>a+p.shots,0),totalGoals=stats.reduce((a,p)=>a+p.goals,0);
+  const add=(title,condition,detail,shame=false)=>{if(condition)awards.push({title,name,detail,shame})};
+  add('🎩 Hat-Trick Hero',bestGoals>=3,`Scored ${bestGoals} goals in a single match.`);
+  add('🧱 Brick Wall',bestSaves>=4,`Made ${bestSaves} saves in one match.`);
+  add('💥 Demo Addict',bestDemos>=3,`Delivered ${bestDemos} demolitions in one match.`);
+  add('🎯 Sharpshooter',totalShots>=5&&totalGoals/totalShots>=.4,`${totalGoals} goals from ${totalShots} shots (${Math.round(100*totalGoals/totalShots)}% accuracy).`);
+  add('🥔 Certified Passenger',stats.length>=3&&stats.reduce((a,p)=>a+p.score,0)/stats.length<250,`Average score below 250 across ${stats.length} matches.`,true);
+  add('🚀 Stormtrooper Academy',totalShots>=8&&totalGoals/totalShots<.15,`${totalGoals} goals from ${totalShots} shots.`,true);
+  add('🫥 Invisible Man',stats.some(p=>p.goals+p.assists+p.saves===0),`Recorded a match with zero goals, assists and saves.`,true);
+  add('🎒 Goal Hoarder',stats.some(p=>p.goals>=4),`Scored four or more goals in one match.`);
+ }
+ ach.innerHTML=awards.length?grid(awards.map(a=>card(a.title,a.name,esc(a.detail),a.shame?'shame':'gold'))):'<p class="muted">No achievements unlocked yet. More shared matches will unlock them.</p>';
+ rep.innerHTML=grid(matches.map((m,i)=>{
+  const ordered=[...m.players].sort((a,b)=>b.score-a.score),best=ordered[0],low=ordered[ordered.length-1];
+  const when=m.date&&!Number.isNaN(Date.parse(m.date))?new Date(m.date).toLocaleDateString('en-AU',{day:'numeric',month:'short',year:'numeric',timeZone:'Australia/Melbourne'}):'Date unknown';
+  const totalShots=m.players.reduce((a,p)=>a+p.shots,0);
+  const line=m.won?`The lads scraped together a ${m.our}–${m.their} win. Somehow, the plan worked.`:`A ${m.our}–${m.their} loss. The replay has been submitted as evidence.`;
+  return `<article class="eadc-feature-card ${m.won?'gold':'shame'}"><div class="eyebrow">${esc(when)} · Match ${matches.length-i}</div><h3>${m.won?'🏆 Victory':'💀 Defeat'} · ${m.our}–${m.their}</h3><p>⭐ Top scorer (points): <strong>${esc(best.name)}</strong> · ${best.score} pts</p><p>🥔 Lowest score: <strong>${esc(low.name)}</strong> · ${low.score} pts</p><p>🎯 Team shots: ${totalShots} · Team goals: ${m.our}</p><p class="verdict">${esc(line)}</p>${m.id?`<p><a href="https://ballchasing.com/replay/${encodeURIComponent(m.id)}" target="_blank" rel="noopener">View replay ↗</a></p>`:''}</article>`;
+ }));
+ const dated=matches.filter(m=>m.date&&!Number.isNaN(Date.parse(m.date)));
+ if(!dated.length){rec.innerHTML='<p class="muted">A dated replay is needed to identify a Friday session.</p>';return}
+ const day=d=>new Intl.DateTimeFormat('en-CA',{timeZone:'Australia/Melbourne',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date(d));
+ const byDay=new Map();for(const m of dated){const d=day(m.date);if(!byDay.has(d))byDay.set(d,[]);byDay.get(d).push(m)}
+ const days=[...byDay.keys()].sort().reverse();
+ // Use the actual Melbourne weekday of a representative replay, not a fixed UTC offset.
+ const isFriday=d=>new Intl.DateTimeFormat('en-US',{timeZone:'Australia/Melbourne',weekday:'long'}).format(new Date(byDay.get(d)[0].date))==='Friday';
+ const friday=days.find(isFriday),selected=friday||days[0],session=byDay.get(selected);
+ const wins=session.filter(m=>m.won).length,losses=session.length-wins,goals=session.reduce((a,m)=>a+m.our,0),conceded=session.reduce((a,m)=>a+m.their,0);
+ const sums=roster.map(r=>{const ps=session.map(m=>m.players.find(p=>p.name===r.name));return {name:r.name,goals:ps.reduce((a,p)=>a+p.goals,0),assists:ps.reduce((a,p)=>a+p.assists,0),saves:ps.reduce((a,p)=>a+p.saves,0),avg:ps.reduce((a,p)=>a+p.score,0)/ps.length}});
+ const ranking=[...sums].sort((a,b)=>(b.avg+b.goals/session.length*100+b.assists/session.length*60+b.saves/session.length*55)-(a.avg+a.goals/session.length*100+a.assists/session.length*60+a.saves/session.length*55));
+ const mvp=ranking[0],lvp=ranking[ranking.length-1];
+ rec.innerHTML=`<p class="muted">${friday?'Latest recorded Friday':'No Friday replays available — latest recorded day'} · ${esc(selected)} · Melbourne time</p><div class="eadc-recap-stats"><div><strong>${session.length}</strong><span>Matches</span></div><div><strong>${wins}–${losses}</strong><span>Win / Loss</span></div><div><strong>${goals}</strong><span>Goals scored</span></div><div><strong>${conceded}</strong><span>Goals conceded</span></div></div>${grid([card('🏆 Session MVP',mvp.name,`${mvp.goals} goals · ${mvp.assists} assists · ${mvp.saves} saves · ${Math.round(mvp.avg)} avg score`,'gold'),card('💀 Session LVP',lvp.name,`${lvp.goals} goals · ${lvp.assists} assists · ${lvp.saves} saves · ${Math.round(lvp.avg)} avg score`,'shame')])}<p class="muted" style="margin-top:12px">${wins>losses?'Winning session. Someone should check whether the opponents had controllers plugged in.':wins===losses?'A perfectly balanced night of brilliance and disappointment.':'More losses than wins. The group chat tribunal is now in session.'}</p>`;
+}
+
 function renderExtras(){
  eadcFriday();
  renderFormTracker();
+ renderNewFeatures();
  const matches=sharedMatchDetails(),{stats}=tally();
  const safe=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
  const fmt=x=>Number.isFinite(x)?x.toFixed(2):'—';
